@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: 'https://Kriz1618.github.io',
-  base: '/guia-entrevistas-de-programacion',
+  // base: '/guia-entrevistas-de-programacion',
   devToolbar: {
     enabled: false
   },

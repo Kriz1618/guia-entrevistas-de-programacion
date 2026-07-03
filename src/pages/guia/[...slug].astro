@@ -8,10 +8,13 @@ import { entrySlug, groupGuideEntries } from "../../utils/guide";
 
 export async function getStaticPaths() {
   const entries = await getCollection("guide");
-  return entries.map((entry) => ({
-    params: { slug: entrySlug(entry) },
-    props: { entry, entries }
-  }));
+  return entries.map((entry) => {
+    const slugString = String(entrySlug(entry));
+    return {
+      params: { slug: slugString },
+      props: { entry, entries }
+    };
+  });
 }
 
 const { entry, entries } = Astro.props;
